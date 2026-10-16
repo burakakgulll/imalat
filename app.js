@@ -179,7 +179,7 @@ async function asmView(mark){
   V.A = A; V.size = S; clearRoot(); V.root = buildScene(A); V.scene.add(V.root);
   const mark_ = c => document.querySelectorAll('#vbtns button').forEach(b => b.setAttribute('aria-pressed', b.dataset.c === c));
   document.querySelectorAll('#vbtns button').forEach(b => b.onclick = () => { mark_(b.dataset.c); setCamera(b.dataset.c); });
-  const first = mark.startsWith('T/') ? 'top' : 'iso';   // T çerçeveleri hep üstten
+  const first = 'iso';   // her montaj izometrik açılır
   mark_(first); setCamera(first);
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if(V.A === A){ clearRoot(); V.root = buildScene(A); V.scene.add(V.root); setCamera(V.cam); } });
 }
